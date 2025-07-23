@@ -35,7 +35,7 @@
 
 <ng-template #menu let-isMobileView="isMobileView">
   <li class="nav-item" *ngFor="let item of navItems">
-    <a class="nav-link mx-3" [class.active]="activeRoute === item.id" [routerLink]="item.route" routerLinkActive="active">
+    <a class="nav-link mx-3" [routerLink]="item.route" [routerLinkActive]="['active-link']">
       {{item.label}}
     </a>
   </li>

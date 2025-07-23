@@ -19,7 +19,7 @@ export class Header implements OnInit, OnDestroy {
   closeResult: WritableSignal<string> = signal('');
 
   navItems = [
-    { id: 'home', label: 'Home', route: '/' },
+    { id: 'home', label: 'Home', route: '/home' },
     { id: 'services', label: 'Services', route: '/services' },
     // { id: 'portfolio', label: 'Portfolio', route: '/portfolio' },
     { id: 'contact', label: 'Contact', route: '/contact-us' },

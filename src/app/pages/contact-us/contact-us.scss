@@ -4,19 +4,13 @@
     height: fit-content;
 
     input {
-      height: 50px;
+      height: 40px;
     }
   }
 
   @media screen and (max-width: 765px) {
-    height: calc(100vh - 266px) !important;
-
     .contact-form-area {
-      width: 100% !important;
-    }
-
-    input {
-      height: 40px !important;
+      width: 95% !important;
     }
   }
 }

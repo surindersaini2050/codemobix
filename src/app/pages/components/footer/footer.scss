@@ -6,3 +6,11 @@
   color: white;
   width: 100%;
 }
+
+.copyright {
+  font-size: 0.9rem;
+
+  @media screen and (max-width: 765px) {
+    font-size: 0.6rem !important;
+  }
+}

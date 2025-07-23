@@ -5,12 +5,40 @@
   }
 
   .banner {
-    height: 50vh;
+    height: 25rem;
     background-image: url("https://images.unsplash.com/photo-1678995635432-d9e89c7a8fc5");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 30px;
+  }
+  
+  .upper-icon {
+    background-color: yellow;
+    animation: jump 9s linear infinite;
+  }
+
+  .lower-icon {
+    background: #f0780d;
+    animation: jump 6s linear infinite;
+  }
+
+  @keyframes jump {
+    0% {
+      bottom: 0px;
+    }
+    25% {
+      bottom: 15px;
+    }
+    50% {
+      bottom: 30px;
+    }
+    75% {
+      bottom: 15px;
+    }
+    100% {
+      bottom: 0px;
+    }
   }
 }
 
