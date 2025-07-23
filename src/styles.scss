@@ -1,1 +1,151 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@use "bootstrap/scss/bootstrap";
+@import "typeface-poppins/index.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+
+  .body-container {
+  .heading-title {
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .heading-description {
+    font-size: 1.8em;
+    font-weight: 500;
+    color: #ffffffcc;
+  }
+
+  .paragraph {
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 765px) {
+    .heading-title {
+      font-size: 1.5em;
+    }
+
+    .heading-description {
+      font-size: 1.1em;
+    }
+
+    .paragraph {
+    font-size: 0.8em;
+  }
+  }
+
+  // .bubbles {
+  //   overflow: hidden;
+  //   height: 75%;
+  //   span {
+  //   position: relative;
+  //   width: 30px;
+  //   height: 30px;
+  //   background: 4fc3dc;
+  //   margin: 0 4px;
+  //   border-radius: 50%;
+  //   box-shadow: 0 0 0 10px #4fc3dc44,
+  //   0 0 50px #4fc3dc,
+  //   0 0 100px #4fc3dc;
+  //   animation: animate 15s linear infinite;
+  //   animation-duration: calc(125s / var(--i));
+
+  //   &:nth-child(even) {
+  //     background: #ff2d75;
+  //      box-shadow: 0 0 0 10px #ff2d7544,
+  //       0 0 50px #ff2d75,
+  //       0 0 100px #ff2d75;
+  //   animation: animate 15s linear infinite;
+  //   animation-duration: calc(125s / var(--i));
+  //   }
+  // }
+  // }
+
+  //   @keyframes animate {
+  //     0% {
+  //       transform: translateY(90vh) scale(0);
+  //     }
+  //     100% {
+  //       transform: translateY(0vh) scale(1);
+  //     }
+  //   }
+}
+
+  .body-container {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    background: linear-gradient(
+      -45deg,
+      #4158d0,
+      #e560dc,
+      #ffb374,
+      #ef5f5f,
+      #d840b6
+    );
+    background-size: 400% 400%;
+    animation: bg 12s ease infinite;
+  }
+
+  @keyframes bg {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+// ngb-offcanvas-panel css
+
+ngb-offcanvas-panel {
+  &.taskbar-mobile-menu {
+    width: 80vw !important;
+    background-color: gray;
+    color: #fff;
+
+    .nav-menu {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      border-top: 0 !important;
+
+      .nav-item {
+        list-style-type: none;
+        padding: 10px 5px;
+        border-bottom: 2px solid white;
+
+        .nav-link {
+          text-decoration: none;
+          font-weight: 500;
+          position: relative;
+          margin: 0 !important;
+          letter-spacing: 2px;
+          transition: color 0.6s ease;
+        }
+      }
+    }
+  }
+}

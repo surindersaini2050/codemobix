@@ -1,0 +1,49 @@
+<nav class="navbar">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="/images/codemobix_logo.png" alt="Logo" width="200" height="60" class="d-inline-block align-text-top">
+    <!-- <span class="ms-1 logo-name">CodeMobix Technologies</span> -->
+  </a>
+
+  @if(!isMobileView) {
+  <ul class="nav-menu d-flex align-items-center my-auto">
+    <ng-container *ngTemplateOutlet="menu"></ng-container>
+  </ul>
+  }@else {
+  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation"
+    (click)="open(menuBar)">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ng-template #menuBar let-offcanvas>
+   <div class="menubar">
+     <div class="offcanvas-header">
+      <button type="button" class="btn btn-danger cta-button  "
+      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+      (click)="onGetStartedClick()">
+      Get Started
+    </button>
+      <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav-menu d-flex flex-column my-auto">
+        <ng-container *ngTemplateOutlet="menu; context: { isMobileView }"></ng-container>
+      </ul>
+    </div>
+   </div>
+  </ng-template>
+  }
+</nav>
+
+<ng-template #menu let-isMobileView="isMobileView">
+  <li class="nav-item" *ngFor="let item of navItems">
+    <a class="nav-link mx-3" [class.active]="activeRoute === item.id" [routerLink]="item.route" routerLinkActive="active">
+      {{item.label}}
+    </a>
+  </li>
+  <li class="nav-item" *ngIf="!isMobileView">
+    <button type="button" class="btn btn-danger cta-button  "
+      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+      (click)="onGetStartedClick()">
+      Get Started
+    </button>
+  </li>
+</ng-template>

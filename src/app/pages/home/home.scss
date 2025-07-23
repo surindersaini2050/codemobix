@@ -1,0 +1,77 @@
+.section-1 {
+  .card {
+    background-color: #006dc8;
+    border-radius: 40px;
+  }
+
+  .banner {
+    height: 50vh;
+    background-image: url("https://images.unsplash.com/photo-1678995635432-d9e89c7a8fc5");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 30px;
+  }
+}
+
+.section-2 {
+  .expertiseCard {
+    background-color: #006dc8;
+    border-radius: 30px;
+    color: #fff;
+
+    &:hover {
+      animation: shake 0.5s;
+      border-color: #aeff00;
+      .card-title {
+        color: #aeff00;
+      }
+
+      .expertise-icon {
+        transform: scale(1.1);
+      }
+    }
+
+    .expertise-icon {
+      width: fit-content;
+      border-radius: 12px;
+    }
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-1px, 1px);
+    }
+    40% {
+      transform: translate(-1px, -1px);
+    }
+    60% {
+      transform: translate(1px, 1px);
+    }
+    80% {
+      transform: translate(1px, -1px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .heading-title {
+    font-size: 2em;
+  }
+
+  .heading-description {
+    font-size: 0.8em;
+  }
+
+  .section-1 {
+    .banner {
+      height: 30vh;
+    }
+  }
+}
