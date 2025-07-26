@@ -1,39 +1,62 @@
 <div class="container contact-us my-5">
-    <div class="heading-title text-center mb-3">Connect With Us</div>
+    <div class="heading-title text-center mb-3" data-aos="fade-down">Connect With Us</div>
+
     <div class="row justify-content-center align-items-center">
-        <div class="heading-description col-md-6 col-12">
-            <p class="text-md-start text-center">Let’s Build the Future Together.</p>
-            <p class="text-md-start text-center"> Have an idea or project in mind? <br> Let’s talk.</p>
-            <div class="px-3">
-                <h5>📧 Sales Inquiries: sales&#64;codemobix.in</h5>
-                <h5>🌐 Website: www.codemobix.in</h5>
-                <h5>📍 Location: Sohana Road, Gurgaon, <br> Haryana, India</h5>
-            </div>
+        <!-- LEFT TEXT SIDE -->
+        <div class="col-md-6 col-12 heading-description text-center text-md-start" data-aos="fade-up"
+            data-aos-delay="200">
+            <h2 class="mb-3 fw-bold">Let’s Build the Future Together.</h2>
+            <p class="lead">
+                Have an idea or project in mind?
+                <br class="d-none d-md-block" />
+                Let’s talk and innovate.
+            </p>
+
+            <ul class="list-unstyled mt-4 contact-info px-md-0 px-3" data-aos="fade-right" data-aos-delay="300">
+                <li class="mb-2">
+                    <i class="fas fa-envelope text-primary me-2"></i>
+                    <strong>Sales:</strong>
+                    <a href="mailto:sales@codemobix.in">sales&#64;codemobix.in</a>
+                </li>
+                <li class="mb-2">
+                    <i class="fas fa-globe text-primary me-2"></i>
+                    <strong>Website:</strong>
+                    <a href="https://www.codemobix.in" target="_blank">www.codemobix.in</a>
+                </li>
+                <li>
+                    <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                    <strong>Location:</strong> Sohana Road, Gurgaon, Haryana, India
+                </li>
+            </ul>
         </div>
-        
-        <div class="col-12 col-md-6 mt-3 mt-md-0">
+
+        <!-- RIGHT FORM SIDE -->
+        <div class="col-12 col-md-6 mt-3 mt-md-0" data-aos="fade-left" data-aos-delay="400">
             <form (ngSubmit)="onSubmit()" #iform="ngForm">
-                <div class="mb-3">
+                <div class="mb-3" data-aos="fade-up" data-aos-delay="500">
                     <label for="name" class="form-label required">Name</label>
                     <input type="text" class="form-control" id="name" name="name" [(ngModel)]="form.name" required />
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" data-aos="fade-up" data-aos-delay="600">
                     <label for="email" class="form-label required">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email"
-                        [(ngModel)]="form.email" required />
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="form.email"
+                        required />
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" data-aos="fade-up" data-aos-delay="700">
                     <label for="phone" class="form-label">Phone</label>
                     <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="form.phone" />
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" data-aos="fade-up" data-aos-delay="800">
                     <label for="message" class="form-label required">Message</label>
-                    <textarea type="text" class="form-control" id="message" name="message" [(ngModel)]="form.message"
-                        rows="5" required></textarea>
+                    <textarea class="form-control" id="message" name="message" [(ngModel)]="form.message" rows="5"
+                        required></textarea>
                 </div>
-                <div class="d-flex justify-content-center align-items-center mt-4">
-                    <button type="submit" class="btn btn-primary py-2 px-5" [disabled]="iform.invalid">Submit</button>
+                <div class="d-flex justify-content-center align-items-center mt-4" data-aos="zoom-in"
+                    data-aos-delay="900">
+                    <button type="submit" class="btn btn-primary py-2 px-5" [disabled]="iform.invalid">
+                        Submit
+                    </button>
                 </div>
             </form>
         </div>

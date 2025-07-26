@@ -1,16 +1,56 @@
 .contact-us {
-  .contact-form-area {
-    width: 40vw;
-    height: fit-content;
+  .heading-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+  }
 
-    input {
-      height: 40px;
+  .heading-description {
+    h2 {
+      font-size: 1.9rem;
+      color: #2c3e50;
+    }
+
+    p.lead {
+      font-size: 1.15rem;
+      color: #5c5c5c;
+    }
+
+    .contact-info {
+      font-size: 1rem;
+
+      a {
+        text-decoration: none;
+        color: #007bff;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      i {
+        width: 1.5rem;
+      }
+    }
+  }
+
+  .contact-form-area {
+    width: 100%;
+    input,
+    textarea {
+      font-size: 0.95rem;
     }
   }
 
   @media screen and (max-width: 765px) {
     .contact-form-area {
-      width: 95% !important;
+      width: 100% !important;
+    }
+
+    .heading-description {
+      h2 {
+        font-size: 1.5rem;
+      }
     }
   }
 }

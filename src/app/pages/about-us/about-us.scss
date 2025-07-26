@@ -1,0 +1,97 @@
+.about-container {
+  max-width: 960px;
+  color: #000;
+  animation: fadeIn 1.2s ease-out;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  .about-heading {
+    font-size: 2.5rem;
+    color: #0086f8;
+    font-weight: 700;
+    animation: slideDown 0.8s ease-out;
+  }
+
+  .about-paragraph {
+    h3 {
+      color: #0086f8;
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      animation: fadeInLeft 1s ease-out;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin: 0.5rem 0;
+      line-height: 1.7;
+      animation: fadeInUp 1s ease-in;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+      list-style: disc;
+
+      li {
+        margin-bottom: 0.6rem;
+        font-size: 1.05rem;
+        animation: fadeInRight 1s ease-in;
+      }
+    }
+  }
+}
+
+// 🔁 Animations
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

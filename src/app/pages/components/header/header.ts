@@ -19,11 +19,11 @@ export class Header implements OnInit, OnDestroy {
   closeResult: WritableSignal<string> = signal('');
 
   navItems = [
-    { id: 'home', label: 'Home', route: '/home' },
-    { id: 'services', label: 'Services', route: '/services' },
+    { id: 'Home', label: 'Home', route: '/home' },
+    { id: 'Services', label: 'Services', route: '/services' },
     // { id: 'portfolio', label: 'Portfolio', route: '/portfolio' },
-    { id: 'contact', label: 'Contact', route: '/contact-us' },
-    { id: 'about', label: 'About', route: '/about-us' },
+    { id: 'Contact Us', label: 'Contact', route: '/contact-us' },
+    { id: 'About Us', label: 'About', route: '/about-us' },
   ];
 
   constructor(private router: Router) { }

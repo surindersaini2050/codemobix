@@ -1,55 +1,83 @@
 <ng-container>
-    <div class="container mx-auto section-1 py-3 px-4 px-md-0 py-md-5">
-        <div class="text-center">
-            <div class="heading-title">Welcome to</div>
-            <div class="heading-title">Codemobix Technologies</div>
-            <div class="heading-description mb-3 mb-md-0">AI, Code, and Impact.</div>
-        </div>
-        <div class="row justify-content-center align-items-center mt-3 mt-md-5">
-            <div class="col-md-6 col-12 text-center">
-                <p class="paragraph">
-                    At Codemobix Technologies, we build the future—one intelligent line of code at a time.
-                    Established in 2025, we specialize in cutting-edge AI module development,
-                    powerful web and mobile applications, and modern backend services.
-                    Whether you're a startup seeking AI integration or an enterprise looking to accelerate digital
-                    transformation,
-                    we’re here to craft scalable and smart solutions that deliver real-world impact.
-                </p>
-            </div>
-            <div class="col-md-6 col-12 p-2 mt-3 mt-md-0 position-relative">
-                <div class="position-absolute z-1 top-0 end-0">
-                    <div class="card p-3 mb-0  rounded-circle upper-icon">
-                        <i class="fa-solid fa-brain fs-1"></i>
-                    </div>
-                </div>
-                <div class="card p-3 mb-0">
-                    <div class="banner"></div>
-                </div>
-                <div class="position-absolute z-1 bottom-0 ">
-                    <div class="card p-3 mb-0 rounded-circle lower-icon">
-                        <i class="fa-solid fa-bolt fs-1"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- SECTION 1 -->
+  <div class="container mx-auto section-1 py-3 px-4 px-md-0 py-md-5 fade-in">
+    <div class="text-center">
+      <div class="heading-title slide-down">Welcome to</div>
+      <div class="heading-title slide-down delay-1">Codemobix Technologies</div>
+      <div class="heading-description fade-in delay-2 mb-3 mb-md-0">AI, Code, and Impact.</div>
     </div>
-    <div class="container mx-auto section-2 py-3 px-4 px-md-0 py-md-5">
-        <div class="text-center">
-            <div class="heading-title">Our Expertise</div>
-            <div class="heading-description">We deliver comprehensive solutions that drive innovation and accelerate
-                growth
-            </div>
+
+    <div class="row justify-content-center align-items-center mt-3 mt-md-5">
+      <div class="col-md-6 col-12 text-center fade-in-left">
+        <p class="paragraph">
+          At Codemobix Technologies, we build the future—one intelligent line of code at a time.
+          Established in 2025, we specialize in cutting-edge AI module development,
+          powerful web and mobile applications, and modern backend services.
+          Whether you're a startup seeking AI integration or an enterprise looking to accelerate digital
+          transformation,
+          we’re here to craft scalable and smart solutions that deliver real-world impact.
+        </p>
+      </div>
+
+      <div class="col-md-6 col-12 p-2 mt-3 mt-md-0 position-relative fade-in-right">
+        <div class="position-absolute z-1 top-0 end-0">
+          <div class="card p-3 mb-0 rounded-circle upper-icon">
+            <i class="fa-solid fa-brain fs-1 m-auto"></i>
+          </div>
         </div>
-        <div class="row mt-3 mt-md-5">
-            <div class="col-12 col-md-4 p-2" *ngFor="let card of expertiseCards">
-                <div class="card p-4 mb-0 expertiseCard h-100">
-                    <div class="expertise-icon p-3" [style.backgroundColor]="card.iconColor">
-                        <i class="fas {{card.icon}} fs-4"></i>
-                    </div>
-                    <div class="card-title my-3 fs-4 fw-bold">{{card.title}}</div>
-                    <div class="card-description">{{card.description}}</div>
-                </div>
-            </div>
+        <div class="card p-3 mb-0">
+          <div class="banner"></div>
         </div>
+        <div class="position-absolute z-1 bottom-0">
+          <div class="card p-3 mb-0 rounded-circle lower-icon">
+            <i class="fa-solid fa-bolt fs-1 m-auto"></i>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="container mx-auto section-2 py-3 px-4 px-md-0 py-md-5 fade-in-up">
+    <div class="text-center">
+      <div class="heading-title slide-down">Our Expertise</div>
+      <div class="heading-description fade-in delay-1">
+        We deliver comprehensive solutions that drive innovation and accelerate growth
+      </div>
+    </div>
+
+    <div class="row mt-3 mt-md-5">
+      <div class="col-12 col-md-4 p-2" *ngFor="let card of expertiseCards; let i = index">
+        <div class="card p-4 mb-0 expertiseCard h-100 fade-in-up" [ngStyle]="{animationDelay: (i * 0.2) + 's'}">
+          <div class="expertise-icon" [style.backgroundColor]="card.iconColor">
+            <i class="fas {{card.icon}} fs-3 m-auto"></i>
+          </div>
+          <div class="card-title my-3 fs-4 fw-bold">{{card.title}}</div>
+          <div class="card-description">{{card.description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: Stats -->
+  <div class="container mx-auto py-5 px-4 stats-section">
+    <div class="row text-center">
+      <div class="col-md-3 col-6 zoom-in">
+        <h2 class="fw-bold counter" data-value="100">0</h2>
+        <p>Projects Delivered</p>
+      </div>
+      <div class="col-md-3 col-6 zoom-in delay-1">
+        <h2 class="fw-bold counter" data-value="200">0</h2>
+        <p>Satisfied Clients</p>
+      </div>
+      <div class="col-md-3 col-6 zoom-in delay-2">
+        <h2 class="fw-bold counter" data-value="15">0</h2>
+        <p>Team Members</p>
+      </div>
+      <div class="col-md-3 col-6 zoom-in delay-3">
+        <h2 class="fw-bold counter" data-value="8">0</h2>
+        <p>Years in Service</p>
+      </div>
+    </div>
+  </div>
 </ng-container>
