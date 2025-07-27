@@ -74,6 +74,10 @@ export class Header implements OnInit, OnDestroy {
     }
   }
 
+  closeMenu() {
+     this.offcanvasService.dismiss('itemClicked');
+  }
+
   onGetStartedClick() {
     this.router.navigate(['/contact-us']);
   }
