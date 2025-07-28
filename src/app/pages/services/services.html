@@ -1,90 +1,18 @@
 <div class="about-container p-3 my-3 my-md-5 mx-auto">
-  <div class="heading-title mb-4 mb-md-5 text-center"> Our Core Services</div>
+  <div class="heading-title mb-4 text-center"> Our Core Services</div>
 
   <!-- Service Block -->
-  <div class="service-section">
-    <div class="about-heading fs-4 fw-bold mb-2 mb-md-3">
-      <i class="fa-solid fa-microchip text-danger"></i>
-      AI Module Development & Integration
-    </div>
-    <div class="about-paragraph">
-      <div class="card-box">
-        <h3>• Custom AI & ML Models</h3>
-        <p>Tailored AI/ML solutions to fit your unique business needs.</p>
+  <ng-container *ngFor="let service of serviceCards; let isFirst= first">
+    <div class="service-section">
+      <div class="about-heading fs-4 fw-bold mt-3 mt-md-5 mb-2 mb-md-3">
+        <i *ngIf="isFirst" class="fa-solid {{service.iconClasses}}"></i>
+        {{service.heading}}
       </div>
-      <div class="card-box">
-        <h3>• Computer Vision & NLP Integration</h3>
-        <p>Integrate smart image recognition and natural language understanding.</p>
-      </div>
-      <div class="card-box">
-        <h3>• Predictive Analytics</h3>
-        <p>Forecast future trends and improve decision-making with data insights.</p>
-      </div>
-      <div class="card-box">
-        <h3>• AI Automation Systems</h3>
-        <p>Automate processes with AI-powered bots and decision engines.</p>
+      <div class="about-paragraph">
+        <div class="card-box" *ngFor="let card of service.cards">
+          <h3>• {{card.title}}</h3>
+          <p>{{card.description}}</p>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Repeat for other sections -->
-  <div class="service-section">
-    <div class="about-heading fs-4 fw-bold mt-3 mt-md-5 mb-2 mb-md-3">
-      🌐 Web App Development
-    </div>
-    <div class="about-paragraph">
-      <div class="card-box">
-        <h3>• Angular, React-based SPAs</h3>
-        <p>Build fast, interactive single-page apps using modern frameworks.</p>
-      </div>
-      <div class="card-box">
-        <h3>• Progressive Web Apps (PWAs)</h3>
-        <p>Deliver app-like performance with offline support and push notifications.</p>
-      </div>
-      <div class="card-box">
-        <h3>• Scalable Backend with Node.js & Python</h3>
-        <p>Create robust APIs and server logic with Node or Python backends.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-section">
-    <div class="about-heading fs-4 fw-bold mt-3 mt-md-5 mb-2 mb-md-3">📱 Flutter App Development</div>
-    <div class="about-paragraph">
-      <div class="card-box">
-        <h3>• Cross-platform Android & iOS apps</h3>
-        <p>Launch your app on both platforms with a single Flutter codebase.</p>
-      </div>
-      <div class="card-box">
-        <h3>• Flutter + Firebase / API integration</h3>
-        <p>Combine Firebase features or custom APIs with seamless UI.</p>
-      </div>
-      <div class="card-box">
-        <h3>• Beautiful UI/UX & performance tuning</h3>
-        <p>Design fluid user interfaces with optimized performance.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-section">
-    <div class="about-heading fs-4 fw-bold mt-3 mt-md-5 mb-2 mb-md-3">⚙️ Backend Services</div>
-    <div class="about-paragraph">
-      <div class="card-box">
-        <h3>• REST & GraphQL APIs</h3>
-        <p>Build flexible and efficient APIs for all frontend applications.</p>
-      </div>
-      <div class="card-box">
-        <h3>• Microservices Architecture</h3>
-        <p>Scale confidently with loosely coupled microservice systems.</p>
-      </div>
-      <div class="card-box">
-        <h3>• Secure Authentication Systems</h3>
-        <p>Implement login systems with OAuth2, JWT, and MFA.</p>
-      </div>
-      <div class="card-box">
-        <h3>• Database Design & Optimization</h3>
-        <p>Design efficient schemas and queries for speed and performance.</p>
-      </div>
-    </div>
-  </div>
-</div>
+  </ng-container>
