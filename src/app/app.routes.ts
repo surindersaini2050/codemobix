@@ -3,7 +3,6 @@ import { Homepage } from './pages/homepage/homepage';
 import { Home } from './pages/home/home';
 import { AboutUs } from './pages/about-us/about-us';
 import { ContactUs } from './pages/contact-us/contact-us';
-import { Services } from './pages/services/services';
 
 export const routes: Routes = [
     {
@@ -11,9 +10,9 @@ export const routes: Routes = [
         children: [
             { path: '', redirectTo: 'home', pathMatch: "full" },
             { path: 'home', component: Home, title: 'CodeMobix' },
-            { path: 'services', component: Services,  title: 'Services' },
-            { path: 'contact-us', component: ContactUs,  title: 'Contact Us' },
-            { path: 'about-us', component: AboutUs,  title: 'About Us' },
+            { path: 'services', loadComponent: () => import('./pages/services/services').then(c => c.Services), title: 'Services' },
+            { path: 'contact-us', loadComponent: () => import('./pages/contact-us/contact-us').then(c => c.ContactUs), title: 'Contact Us' },
+            { path: 'about-us', loadComponent: () => import('./pages/about-us/about-us').then(c => c.AboutUs), title: 'About Us' },
         ]
     },
     { path: '**', redirectTo: 'home' },
