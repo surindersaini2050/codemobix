@@ -74,12 +74,13 @@ export class Header implements OnInit, OnDestroy {
     }
   }
 
-  closeMenu() {
-     this.offcanvasService.dismiss('itemClicked');
+  closeMenu(btn = false) {
+     this.offcanvasService.dismiss(`${btn ? 'button' : 'item'} Clicked`);
   }
 
   onGetStartedClick() {
     this.router.navigate(['/contact-us']);
+    this.closeMenu(true)
   }
 
   ngOnDestroy(): void {
