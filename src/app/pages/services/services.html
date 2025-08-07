@@ -2,17 +2,23 @@
   <div class="heading-title mb-4 text-center"> Our Core Services</div>
 
   <!-- Service Block -->
-  <ng-container *ngFor="let service of serviceCards; let isFirst= first">
-    <div class="service-section">
-      <div class="about-heading fs-4 fw-bold mt-3 mt-md-5 mb-2 mb-md-3">
-        <i *ngIf="isFirst" class="fa-solid {{service.iconClasses}}"></i>
-        {{service.heading}}
-      </div>
-      <div class="about-paragraph">
-        <div class="card-box" *ngFor="let card of service.cards">
-          <h3>• {{card.title}}</h3>
-          <p>{{card.description}}</p>
-        </div>
-      </div>
+
+  @for (service of serviceCards; track service.heading; let isFirst = $first) {
+  <div class="service-section">
+    <div class="about-heading fs-4 fw-bold mt-3 mt-md-5 mb-2 mb-md-3">
+      @if (isFirst) {
+        <i class="fa-solid {{ service.iconClasses }}"></i>
+      }
+      {{ service.heading }}
     </div>
-  </ng-container>
+
+    <div class="about-paragraph">
+      @for (card of service.cards; track card.title) {
+        <div class="card-box">
+          <h3>• {{ card.title }}</h3>
+          <p>{{ card.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+}

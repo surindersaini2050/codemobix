@@ -1,6 +1,7 @@
 <nav class="navbar" [class.header-scrolled]="isScrolled">
   <a class="navbar-brand d-flex align-items-center" href="https://codemobix.in/home">
-    <img src="https://github.com/surindersaini2050/codemobix/blob/main/public/images/codemobix_logo.png?raw=true" titile="Codemobix Technologies" alt="Logo" width="200" height="60" class="d-inline-block align-text-top">
+    <img src="https://github.com/surindersaini2050/codemobix/blob/main/public/images/codemobix_logo.png?raw=true"
+      titile="Codemobix Technologies" alt="Logo" width="200" height="60" class="d-inline-block align-text-top">
   </a>
 
   @if(!isMobileView) {
@@ -31,15 +32,20 @@
 </nav>
 
 <ng-template #menu let-isMobileView="isMobileView">
-  <li class="nav-item" *ngFor="let item of navItems">
+  @for (item of navItems; track item.label) {
+  <li class="nav-item">
     <a class="nav-link mx-3" [routerLink]="item.route" (click)="!isMobileView ? '' : closeMenu()"
       [routerLinkActive]="['active-link']">
-      {{item.label}}
+      {{ item.label }}
     </a>
   </li>
-  <li class="nav-item" *ngIf="!isMobileView">
+  }
+
+  @if (!isMobileView) {
+  <li class="nav-item">
     <button type="button" class="btn btn-danger cta-button" (click)="onGetStartedClick()">
       Get Started
     </button>
   </li>
+  }
 </ng-template>
