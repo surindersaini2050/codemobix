@@ -39,8 +39,15 @@
   }
 
   .contact-form-area {
-    width: 100%;
     animation: fadeInUp 1s ease-out;
+
+    label.required::after {
+      content: " *";
+      color: red;
+      font-size: 15px;
+      margin-left: 2px;
+      position: absolute;
+    }
 
     input,
     textarea {

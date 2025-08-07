@@ -20,7 +20,7 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "baseHref": "/codemobix/",
+            "baseHref": "/",
             "outputPath": "dist/codemobix",
             "assets": [
               {

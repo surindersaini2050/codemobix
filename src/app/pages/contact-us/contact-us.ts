@@ -19,11 +19,17 @@ export class ContactUs {
 
   form = this.newForm
 
+  constructor(){}
+
   onSubmit() {
-    const {name, email, phone, message} = this.form;
-    const subject = `${name} || ${email} || ${phone}`
+    const { name, email, phone, message } = this.form;
+    if (!name || !message || (!email && !phone)) {
+      alert('Please fill all required fields.');
+      return;
+    }
+    const subject = `${name} ${email ? ' || ' + email : ''} ${phone ? ' || ' + phone : ''}`
     const body = `Hello, I'm Mr. ${name}, ${message}`;
-    const mailtoLink = `mailto:surinder.saini2050@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:chandsingh2228@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
     this.form = this.newForm;
   }

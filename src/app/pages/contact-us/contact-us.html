@@ -35,7 +35,7 @@
                         <i class="fas fa-phone text-primary me-1 mt-1"></i>
                         <strong class="text-nowrap">Call & Whatsapp: </strong>
                         <div class="d-flex flex-wrap ms-2">
-                            <span class="me-1"> +91-9339906263, </span>
+                            <span class="me-1"> +91-9830532566, </span>
                             <span> +91-8222022289</span>
                         </div>
                     </div>
@@ -54,28 +54,48 @@
         </div>
 
         <!-- RIGHT FORM SIDE -->
-        <div class="col-12 col-md-6 mt-3 mt-md-0">
+        <div class="col-12 col-md-6 mt-3 mt-md-0 contact-form-area">
             <form (ngSubmit)="onSubmit()" #iform="ngForm">
                 <div class="mb-3">
                     <label for="name" class="form-label required">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="form.name" />
+                    <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="form.name"
+                        #name="ngModel" />
+                    @if (name.invalid && name.touched) {
+                    <small class="text-danger">Name is required.</small>
+                    }
                 </div>
+
                 <div class="mb-3">
-                    <label for="email" class="form-label required">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="form.email" />
+                    <label for="email" class="form-label {{!form.phone ? 'required' : ''}}">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" email [(ngModel)]="form.email"
+                        #email="ngModel" />
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    @if (email.invalid && email.touched) {
+                    <small class="text-danger">Enter a valid email.</small>
+                    }
                 </div>
+
                 <div class="mb-3">
                     <label for="phone" class="form-label">Phone</label>
-                    <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="form.phone" />
+                    <input type="text" class="form-control" id="phone" name="phone" pattern="^[0-9]{10}$"
+                        [(ngModel)]="form.phone" #phone="ngModel" />
+                    @if (phone.invalid && phone.touched) {
+                    <small class="text-danger">Phone must be 10 digits.</small>
+                    }
                 </div>
+
                 <div class="mb-3">
                     <label for="message" class="form-label required">Message</label>
-                    <textarea class="form-control" id="message" name="message" [(ngModel)]="form.message" rows="5">
-                    </textarea>
+                    <textarea class="form-control" id="message" name="message" required [(ngModel)]="form.message"
+                        #message="ngModel" rows="5"></textarea>
+                    @if (message.invalid && message.touched) {
+                    <small class="text-danger">Message is required.</small>
+                    }
                 </div>
+
                 <div class="d-flex justify-content-center align-items-center my-4">
-                    <button type="submit" class="btn btn-primary py-2 px-5" [disabled]="iform.invalid">
+                    <button type="submit" class="btn btn-primary py-2 px-5"
+                        [disabled]="iform.invalid || (!form.email && !form.phone)">
                         Submit
                     </button>
                 </div>
